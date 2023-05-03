@@ -1,7 +1,6 @@
 .card-wrapper {
   background: linear-gradient(to right, #e0eafc, #cfdef3);
   display: flex;
-  width: 450px;
   max-width: 500px;
   height: 200px;
   border-radius: 10px;
