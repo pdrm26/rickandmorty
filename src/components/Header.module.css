@@ -1,0 +1,19 @@
+.header {
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #0fc67a, #47d56d);
+  color: white;
+  padding: 0 10%;
+}
+
+.header ul {
+  display: flex;
+  list-style: none;
+}
+
+.header a {
+  color: white;
+  font-size: 1.25rem;
+}
