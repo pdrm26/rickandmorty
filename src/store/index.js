@@ -1,21 +1,9 @@
-import { createStore } from "redux";
-const InitialState = { favouritesList: [] };
+import { configureStore } from "@reduxjs/toolkit";
 
-const reduxReducer = (state = InitialState, action) => {
-  if (action.type === "ADD") {
-    const isCharacterExist = state.favouritesList.find(
-      (character) => character.id === action.character.id
-    );
-    if (!isCharacterExist) {
-      return {
-        favouritesList: [action.character, ...state.favouritesList],
-      };
-    }
-  }
+import favouriteReducer from "./favourite";
 
-  return state;
-};
-
-const store = createStore(reduxReducer);
+const store = configureStore({
+  reducer: favouriteReducer,
+});
 
 export default store;
