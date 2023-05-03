@@ -1,11 +1,9 @@
 .favorite-characters-section {
-    background-color: #f9f8f8;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 10px;
     justify-content: space-around;
     padding: 2rem 1rem;
-    /* margin-bottom: 2rem; */
   }
   
   @media screen and (max-width: 481px) {
