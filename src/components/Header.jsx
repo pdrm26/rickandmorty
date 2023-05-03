@@ -1,13 +1,16 @@
 import classes from "./Header.module.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className={classes.header}>
-      <h1>Rick and Morty</h1>
+      <Link to="/">
+        <h1>Rick and Morty</h1>
+      </Link>
       <nav>
         <ul>
           <li>
-            <a href="/">All Your Favourites</a>
+            <Link to="/favourites">All Your Favourites</Link>
           </li>
         </ul>
       </nav>
