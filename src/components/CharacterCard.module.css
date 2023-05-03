@@ -23,7 +23,7 @@
   margin-bottom: 30px;
 }
 
-.add-favorite-section button {
+.add-favourite-section button {
   background-image: linear-gradient(to right, #4b79a1, #283e51);
   padding: 15px;
   border: none;
@@ -37,9 +37,17 @@
   display: block;
 }
 
-.add-favorite-section button:hover {
+.add-favourite-section.fav-btn button{
+  background-image: linear-gradient(to right, #cd1b03, #7c0500) !important;
+}
+
+.add-favourite-section button:hover {
   background-position: right center;
   color: #fff;
   text-decoration: none;
   cursor: pointer;
+}
+
+.fav-background {
+  background: linear-gradient(to right, #adf39b, #7ff866);
 }
