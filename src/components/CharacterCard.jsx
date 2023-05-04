@@ -38,6 +38,13 @@ export default function CharacterCard({
     <article className={articleStyle}>
       <div className={styles["img-wrapper"]}>
         <img src={character.image} alt={character.name} />
+        <div className={styles["character-info"]}>
+          <p>
+            {character.status} - {character.species}
+          </p>
+          <p>Last known location: {character.location.name}</p>
+          <p>First seen: {character.origin.name}</p>
+        </div>
       </div>
       <div className={styles["content-wrapper"]}>
         <h2>{character.name}</h2>
