@@ -19,7 +19,7 @@
 
 1. Clone the repo
   ```sh
-  git clone git@github.com:ppedd/sitcom.git
+  git clone git@github.com:ppedd/rickandmorty.git
   ```
 2. Install NPM packages
   ```sh
