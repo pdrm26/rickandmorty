@@ -1,6 +1,6 @@
 import styles from "./Skeleton.module.css";
 
-const Skeleton = () => {
+const Skeleton: React.FC = () => {
   return (
     <article className={styles["skeleton-wrapper"]}>
       <div className={styles["skeleton-image"]}></div>

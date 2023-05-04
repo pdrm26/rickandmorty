@@ -1,12 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = { favouriteCharacters: [] };
+
+const initialState: FavouriteState = { favouriteCharacters: [] };
 
 const favouriteSlice = createSlice({
   name: "favourties",
   initialState,
   reducers: {
-    add(state, action) {
+    add(state, action: PayloadAction<Character>) {
       const isCharacterExist = state.favouriteCharacters.find(
         (character) => character.id === action.payload.id
       );
@@ -17,14 +18,14 @@ const favouriteSlice = createSlice({
         localStorage.setItem("favChars", JSON.stringify(newFavList));
       }
     },
-    remove(state, action) {
+    remove(state, action: PayloadAction<number>) {
       const newFavList = state.favouriteCharacters.filter(
         (character) => character.id !== action.payload
       );
       state.favouriteCharacters = newFavList;
       localStorage.setItem("favChars", JSON.stringify(newFavList));
     },
-    set(state, action) {
+    set(state, action: PayloadAction<Character[]>) {
       state.favouriteCharacters = action.payload;
     },
   },

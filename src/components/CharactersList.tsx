@@ -3,14 +3,19 @@ import CharacterCard from "./CharacterCard";
 import styles from "./CharactersList.module.css";
 import Skeleton from "./Skeleton";
 
-export default function CharactersList() {
-  const [characters, setCharacters] = useState([]);
-  const [pageInfo, setPageInfo] = useState({});
-  const [pageAddr, setPageAddr] = useState(
+type pageInfo = {
+  next: string | null;
+  prev: string | null;
+}
+
+const CharactersList: React.FC = function () {
+  const [characters, setCharacters] = useState<Character[]>([]);
+  const [pageInfo, setPageInfo] = useState<pageInfo>({ next: null, prev: null });
+  const [pageAddr, setPageAddr] = useState<string>(
     "https://rickandmortyapi.com/api/character?page=1"
   );
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
     setIsLoading(true);
@@ -23,6 +28,18 @@ export default function CharactersList() {
       .catch((error) => setError(error.message))
       .finally(() => setIsLoading(false));
   }, [pageAddr]);
+
+  const gotoNextPage = () => {
+    if (pageInfo.next !== null) {
+      setPageAddr(pageInfo.next);
+    }
+  };
+  const gotoPrevPage = () => {
+    if (pageInfo.prev !== null) {
+      setPageAddr(pageInfo.prev);
+    }
+  };
+
 
   if (isLoading) {
     return (
@@ -42,24 +59,14 @@ export default function CharactersList() {
     return <div>No characters found.</div>;
   }
 
-  const gotoNextPage = () => {
-    if (pageInfo.next !== null) {
-      setPageAddr(pageInfo.next);
-    }
-  };
-  const gotoPrevPage = () => {
-    if (pageInfo.prev !== null) {
-      setPageAddr(pageInfo.prev);
-    }
-  };
 
   return (
     <>
       <div className={styles["page-controllers"]}>
-        <button onClick={gotoPrevPage} disabled={!pageInfo.prev && "disabled"}>
+        <button onClick={gotoPrevPage} disabled={!pageInfo.prev}>
           PREVIOUS PAGE
         </button>
-        <button onClick={gotoNextPage} disabled={!pageInfo.next && "disabled"}>
+        <button onClick={gotoNextPage} disabled={!pageInfo.next}>
           NEXT PAGE
         </button>
       </div>
@@ -71,3 +78,6 @@ export default function CharactersList() {
     </>
   );
 }
+
+
+export default CharactersList

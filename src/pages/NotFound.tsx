@@ -1,7 +1,7 @@
 import "./NotFound.css";
 import end from "../assets/end.jpeg";
 
-export default function NotFound() {
+const NotFound: React.FC = function () {
   return (
     <>
       <div className="wrapper">
@@ -15,3 +15,5 @@ export default function NotFound() {
     </>
   );
 }
+
+export default NotFound;

@@ -2,17 +2,18 @@ import { useDispatch } from "react-redux";
 import { favouriteActions } from "store/favourite";
 import styles from "./CharacterCard.module.css";
 
-export default function CharacterCard({
+const CharacterCard: React.FC<{ character: Character, isFavouriteCharacter?: boolean }> = function ({
   character,
   isFavouriteCharacter = false,
 }) {
+
   const dispatch = useDispatch();
 
-  const addToFavHandler = (character) => {
+  const addToFavHandler = (character: Character) => {
     dispatch(favouriteActions.add(character));
   };
 
-  const removeFavHandler = (characterId) => {
+  const removeFavHandler = (characterId: number) => {
     dispatch(favouriteActions.remove(characterId));
   };
 
@@ -34,7 +35,7 @@ export default function CharacterCard({
     </button>
   );
 
-  
+
 
   return (
     <article className={articleStyle}>
@@ -55,3 +56,5 @@ export default function CharacterCard({
     </article>
   );
 }
+
+export default CharacterCard

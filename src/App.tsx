@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { favouriteActions } from "store/favourite";
 
@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import NotFound from "pages/NotFound";
 import Favourites from "./pages/Favourites";
 
-export default function App() {
+const App: React.FC = function () {
   const dispatch = useDispatch();
   const favCharsOnLocalStorage = localStorage.getItem("favChars");
 
@@ -30,3 +30,6 @@ export default function App() {
     </>
   );
 }
+
+
+export default App;
