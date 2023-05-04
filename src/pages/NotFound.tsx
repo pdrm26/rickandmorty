@@ -1,5 +1,5 @@
 import "./NotFound.css";
-import end from "../assets/end.jpeg";
+import end from "../assets/notFoundPageLogo.jpeg";
 
 const NotFound: React.FC = function () {
   return (
