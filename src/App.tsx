@@ -17,7 +17,7 @@ const App: React.FC = function () {
     if (favCharsOnLocalStorage !== null) {
       dispatch(favouriteActions.set(JSON.parse(favCharsOnLocalStorage)));
     }
-  }, []);
+  }, [favCharsOnLocalStorage, dispatch]);
 
   return (
     <>
