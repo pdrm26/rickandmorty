@@ -3,13 +3,16 @@ import CharacterCard from "./CharacterCard";
 import styles from "./FavouritesList.module.css";
 
 export default function FavouritesList() {
-  const Last3FavouritesCharacter = useSelector((state) =>
-    state.favouriteCharacters.slice(0, 3)
-  );
+  const favouriteCharacters = useSelector((state) => state.favouriteCharacters);
+
   return (
     <section className={styles["favorite-characters-section"]}>
-      {Last3FavouritesCharacter.map((character) => (
-        <CharacterCard character={character} key={character.id} isFavouriteCharacter={true} />
+      {favouriteCharacters.slice(0, 3).map((character) => (
+        <CharacterCard
+          character={character}
+          key={character.id}
+          isFavouriteCharacter={true}
+        />
       ))}
     </section>
   );
