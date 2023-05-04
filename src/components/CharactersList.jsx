@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CharacterCard from "./CharacterCard";
 import styles from "./CharactersList.module.css";
+import Skeleton from "./Skeleton";
 
 export default function CharactersList() {
   const [characters, setCharacters] = useState([]);
@@ -17,7 +18,15 @@ export default function CharactersList() {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <section className={styles["characters-section"]}>
+        {
+          Array
+            .from({ length: 20 }, (_, index) => index + 1)
+            .map((cardNum) => <Skeleton key={cardNum} />)
+        }
+      </section>
+    );
   }
 
   if (error) {
