@@ -1,40 +1,12 @@
 .favourite-characters-section {
-  display: grid;
-  grid-gap: 10px;
-  padding: 2rem 1rem;
-  justify-content: space-evenly;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: linear-gradient(to right, #efefef, #ececec);
+  padding: 3rem;
 }
 
 .dont-have-favourite {
-    font-size: 1.5rem;
-}
-
-@media screen and (max-width: 481px) {
-  .favourite-characters-section {
-    grid-template-columns: auto;
-  }
-}
-
-@media screen and (min-width: 481px) {
-  .favourite-characters-section {
-    grid-template-columns: auto auto;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .favourite-characters-section {
-    grid-template-columns: auto auto auto;
-  }
-}
-
-@media screen and (min-width: 1500px) {
-  .favourite-characters-section {
-    grid-template-columns: auto auto auto auto;
-  }
-}
-
-@media screen and (min-width: 2100px) {
-  .favourite-characters-section {
-    grid-template-columns: auto auto auto auto auto;
-  }
+  font-size: 1.5rem;
 }

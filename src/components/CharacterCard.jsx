@@ -36,7 +36,7 @@ export default function CharacterCard({
 
   return (
     <article className={articleStyle}>
-      <div className="img-wrapper">
+      <div className={styles["img-wrapper"]}>
         <img src={character.image} alt={character.name} />
       </div>
       <div className={styles["content-wrapper"]}>
