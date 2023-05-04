@@ -11,18 +11,21 @@ const favouriteSlice = createSlice({
         (character) => character.id === action.payload.id
       );
       if (!isCharacterExist) {
-        state.favouriteCharacters = [
-          action.payload,
-          ...state.favouriteCharacters,
-        ];
+        const newFavList = [action.payload, ...state.favouriteCharacters];
+        state.favouriteCharacters = newFavList;
+
+        localStorage.setItem("favChars", JSON.stringify(newFavList));
       }
     },
     remove(state, action) {
-      console.log(state, action);
       const newFavList = state.favouriteCharacters.filter(
         (character) => character.id !== action.payload
       );
       state.favouriteCharacters = newFavList;
+      localStorage.setItem("favChars", JSON.stringify(newFavList));
+    },
+    set(state, action) {
+      state.favouriteCharacters = action.payload;
     },
   },
 });
