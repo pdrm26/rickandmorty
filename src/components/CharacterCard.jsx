@@ -34,6 +34,8 @@ export default function CharacterCard({
     </button>
   );
 
+  
+
   return (
     <article className={articleStyle}>
       <div className={styles["img-wrapper"]}>

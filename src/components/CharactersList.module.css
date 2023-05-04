@@ -6,3 +6,13 @@
   background: linear-gradient(to right, #1d1d1d, #141414);
   padding: 3rem;
 }
+
+.page-controllers {
+  margin: 10px;
+}
+
+.page-controllers button{
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
+}
