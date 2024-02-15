@@ -1,7 +1,7 @@
 import CharactersList from "../components/CharactersList";
 import FavouritesList from "../components/FavouritesList";
 
-const Home: React.FC = function () {
+export default function Home() {
   return (
     <>
       <FavouritesList />
@@ -9,5 +9,3 @@ const Home: React.FC = function () {
     </>
   );
 }
-
-export default Home;

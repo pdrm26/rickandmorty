@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import NotFound from "pages/NotFound";
 import Favourites from "./pages/Favourites";
 
-const App: React.FC = function () {
+export default function App() {
   const dispatch = useDispatch();
   const favCharsOnLocalStorage = localStorage.getItem("favChars");
 
@@ -30,6 +30,3 @@ const App: React.FC = function () {
     </>
   );
 }
-
-
-export default App;
