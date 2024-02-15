@@ -1,6 +1,6 @@
 import styles from "./Skeleton.module.css";
 
-const Skeleton: React.FC = () => {
+export default function Skeleton() {
   return (
     <article className={styles["skeleton-wrapper"]}>
       <div className={styles["skeleton-image"]}></div>
@@ -10,6 +10,4 @@ const Skeleton: React.FC = () => {
       </div>
     </article>
   );
-};
-
-export default Skeleton;
+}

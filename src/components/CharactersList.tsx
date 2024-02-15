@@ -6,16 +6,14 @@ import Skeleton from "./Skeleton";
 type pageInfo = {
   next: string | null;
   prev: string | null;
-}
+};
 
-const CharactersList: React.FC = function () {
+export default function CharactersList() {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [pageInfo, setPageInfo] = useState<pageInfo>({ next: null, prev: null });
-  const [pageAddr, setPageAddr] = useState<string>(
-    "https://rickandmortyapi.com/api/character?page=1"
-  );
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string>("");
+  const [pageAddr, setPageAddr] = useState("https://rickandmortyapi.com/api/character?page=1");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     setIsLoading(true);
@@ -40,7 +38,6 @@ const CharactersList: React.FC = function () {
     }
   };
 
-
   if (isLoading) {
     return (
       <section className={styles["characters-section"]}>
@@ -58,7 +55,6 @@ const CharactersList: React.FC = function () {
   if (characters.length === 0) {
     return <div>No characters found.</div>;
   }
-
 
   return (
     <>
@@ -78,6 +74,3 @@ const CharactersList: React.FC = function () {
     </>
   );
 }
-
-
-export default CharactersList
